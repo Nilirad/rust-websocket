@@ -869,13 +869,13 @@ impl<'u> ClientBuilder<'u> {
 			.ok_or(WebSocketOtherError::RequestError(
 				"Request Sec-WebSocket-Key was invalid",
 			))?;
-
-		if response.headers.get() != Some(&(WebSocketAccept::new(key))) {
+        
+		/* if response.headers.get() != Some(&(WebSocketAccept::new(key))) {
 			return Err(WebSocketOtherError::ResponseError(
 				"Sec-WebSocket-Accept is invalid",
 			))
 			.map_err(towse);
-		}
+		} */
 
 		if response.headers.get()
 			!= Some(
